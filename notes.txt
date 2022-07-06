@@ -1,0 +1,32 @@
+--> React Js :- It is an open-source , cross platform javascript libarary which is used to develop user interfaces (UI) (Front End)
+  -> It is only View Layer of the application 
+  -> It is maintained by Facebook 
+  -> It is used to develop SPA (Single Page Application)
+  -> Features of React Js 
+    1. Components based architecture
+    2. JSX (javascript syntex extension), it provide to write html code in the javascript code.It is benificial for error handling.
+    3. Virtual DOM : It is a programming concept where a virtual representation of a UI is kept in the memory and synced with the Real DOM.
+
+      -> Shadow DOM :- It is a browser technology designed for scoping variables and css in web components.
+
+      --> Environmental Setup 
+        -> Node Js environment 
+          -> Download and install node js 
+            https://nodejs.org/en/download/
+          -> How we create react app 
+            npx create-react-app aapname 
+          -> How we execute the react app 
+            cd appname 
+            npm start (3000 in default browser)
+    -> How react app execute 
+     index.html 
+     <div id="root"></div>
+     ---> src/index.js (main js entry point file) --> It get the id root from index.html and load the default component (App) in the div.
+
+     -> Tomorrow 
+     ->dynamic data binding
+      var , array , object 
+        {} map() 
+     -> components 
+       class & function
+       state and props 
