@@ -1,0 +1,36 @@
+-> function COmponent 
+Home.js 
+import React from 'react';
+function Home(){
+    return(
+        <>
+          <h2> Home Component</h2>
+        </>
+    )
+}
+export default Home;
+-> props and state 
+-> state :- React introduce react hooks in react 16.18 version where we can manage states and other react features in function component.
+  -> useState() :- It is used to manage state 
+     -> how we set state 
+     const [count,setCount]=useState(0);
+     -> How we get state 
+      {count}
+      -> How we update state 
+        setCount(count+1)
+
+ -> Routing :- It is a process to navigate between multiple pages into a single page. It is used to develop SPA.
+   -> When a URL is match with the route , then a component is render in the DOM.
+     -> React Router Module (V6) (3rd party module)
+     npm install react-router-dom --save 
+     -> React Router Component 
+        -> BrowserRouter :- It is a main container to allow dynamic routes.we put all the route code inside this.
+        -> Routes :- we can define all route in the Routes
+        -> Route :- to define path and call dynamic component 
+        -> Link :- Hyperlink 
+        -> Outlet :- nested routing 
+       -> Design 
+       Home  About Us   Gallery  Contact Us 
+       <div>
+          to load components when url is match with the route
+       </div>
