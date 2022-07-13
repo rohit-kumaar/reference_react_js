@@ -1,0 +1,11 @@
+$blue-shade: #264BC4;
+$pale-green-color:#3CC27F;
+.list{
+  border: 2px solid $pale-green-color;
+  width:40%;
+  list-style-type: none;
+}
+.details{
+   color:$blue-shade;
+   font-size: 24px;
+}

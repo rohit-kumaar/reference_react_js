@@ -1,0 +1,25 @@
+
+       --> Styles in React Js 
+         1. Inline style 
+            <div style={{color:'red'}}> --- </div>
+         2. Normal Css : 
+            <div className="pClass"> ---- </div>
+         3. CSS in js 
+            react-jss (npm install react-jss --save)
+            import {createUseStyles} from 'react-jss';
+            const styles=createUseStyles({
+              box:{
+                 color:'red'
+              },
+              title:{
+                 fontSize:'20px'
+              }
+            })
+
+            const classes=styles();
+            <div className={classes.box}>---</div>
+          4.Styled components :- It allows us to style the css under the variable created in javascript.
+            npm install --save styled-components
+          5. ****Sass and SCSS :- (CSS extension language )
+             -> install 
+                npm install node-sass --save 
