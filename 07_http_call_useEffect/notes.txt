@@ -1,0 +1,36 @@
+-> Http client programming in React, fetching json data (HTTP CALL) (How we consume the API)
+  -> fetch :- inbuild method of javascript and it return promise 
+     eg:
+      const API="---";
+      fetch(API)
+      .then(res=> res.json())
+      .then(data=>{
+        //
+      })
+      .catch(err=> console.log(err))
+  -> axios :- 3rd party package return a promise and give us get | post | put | delete method 
+    npm install axios --save 
+    eg:
+    import axios from "axios";
+      const API="--";
+      axios.get(API)
+      .then(res=>{
+        console.log(res.data)
+      })
+      .catch(err=> console.log(err))
+    -> useEffect() :- mounting , unmounting , updating 
+      -> mounting :- when component is loaded 
+        useEffect(()=>{
+
+        },[])
+     -> updating :- when any update in state and props 
+       useEffect(()=>{
+
+        },[state|props])
+     -> unmounting :- when we leave from the component (cleanup data)
+      useEffect(()=>{
+          return (){
+            //
+          }
+        },[])
+      
