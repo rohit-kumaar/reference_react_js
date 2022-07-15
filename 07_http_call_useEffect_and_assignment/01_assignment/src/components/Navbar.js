@@ -42,6 +42,11 @@ function Navbar() {
                   Todos
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/photos" className="nav-link">
+                  Photos
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
