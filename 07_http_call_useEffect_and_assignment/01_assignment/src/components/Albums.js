@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function Comments() {
-  const [comments, setComments] = useState([]);
+function Albums() {
+  const [albums, setAlbums] = useState([]);
   useEffect(() => {
-    const API = "https://jsonplaceholder.typicode.com/comments";
+    const API = "https://jsonplaceholder.typicode.com/albums";
 
     axios
       .get(API)
-      .then((res) => setComments(res.data))
+      .then((res) => setAlbums(res.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -19,18 +19,14 @@ function Comments() {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Name</th>
-              <th>email</th>
-              <th>Body</th>
+              <th>Title</th>
             </tr>
           </thead>
           <tbody>
-            {comments?.map((user) => (
+            {albums?.map((user) => (
               <tr key={user.id}>
                 <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.body}</td>
+                <td>{user.title}</td>
               </tr>
             ))}
           </tbody>
@@ -40,4 +36,4 @@ function Comments() {
   );
 }
 
-export default Comments;
+export default Albums;
