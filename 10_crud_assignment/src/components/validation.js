@@ -39,15 +39,6 @@ function enterProductQuantity() {
 
 function submitForm(error) {
   error.preventDefault();
-  const productName = document.getElementById("productName");
-  let success = document.getElementById("success");
-  let productNameStr = productName.value;
-  if (productNameStr.length > 0) {
-    success.classList.add("show");
-  }
-  setTimeout(() => {
-    success.classList.remove("show");
-  }, 5000);
 }
 
 export {
