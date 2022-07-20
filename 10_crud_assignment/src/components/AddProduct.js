@@ -20,10 +20,10 @@ function AddProduct() {
         initialValues={{ name: "", price: "", quantity: "" }}
         validationSchema={Yup.object({
           name: Yup.string()
-            .min(5, "Must be 15 characters or less")
-            .required("Please enter a product name"),
-          price: Yup.string().required("Please enter a product price"),
-          quantity: Yup.string().required("Please enter a product quantity"),
+            .min(5, "Must be 15 characters or less.")
+            .required("Please enter a product name."),
+          price: Yup.string().required("Please enter a product price."),
+          quantity: Yup.string().required("Please enter a product quantity."),
         })}
         onSubmit={(values) => postData(values)}
       >
