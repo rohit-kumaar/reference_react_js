@@ -28,7 +28,7 @@ function EditProduct() {
                 <label htmlFor="productName" className="form-label">
                   <b>Product Name</b>
                 </label>
-                <Field type="text" className="form-control"  />
+                <Field type="text" className="form-control" />
                 <div className="invalid-feedback">Enter product name</div>
                 <div className="valid-feedback">Looks good!</div>
               </div>
@@ -53,7 +53,7 @@ function EditProduct() {
             </div>
 
             <button type="submit" className="btn btn-primary mt-3">
-              Submit
+              Edit
             </button>
           </div>
         </Form>
