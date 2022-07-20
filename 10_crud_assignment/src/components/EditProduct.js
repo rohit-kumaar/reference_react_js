@@ -56,7 +56,7 @@ function EditProduct() {
           </div>
 
           <button type="button" id="submit" className="btn btn-primary mt-3">
-            Submit
+            Edit
           </button>
         </div>
       </form>

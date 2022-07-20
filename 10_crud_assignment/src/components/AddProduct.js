@@ -7,6 +7,7 @@ import {
 } from "./validation";
 
 function AddProduct() {
+
   return (
     <>
       <form onSubmit={submitForm}>
@@ -56,7 +57,7 @@ function AddProduct() {
           </div>
 
           <button type="button" id="submit" className="btn btn-primary mt-3">
-            Submit
+           Add
           </button>
         </div>
       </form>
