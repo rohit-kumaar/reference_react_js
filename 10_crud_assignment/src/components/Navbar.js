@@ -40,6 +40,15 @@ function Navbar() {
                   Products
                 </NavLink>
               </li>
+              <li className="nav-item ">
+                <NavLink
+                  to="/add-product"
+                  className="nav-link text-light"
+                  aria-current="page"
+                >
+                  Add Product
+                </NavLink>
+              </li>
             </ul>
             <form className="d-flex" role="search">
               <input
