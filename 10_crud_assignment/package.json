@@ -38,6 +38,8 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^7.3.0"
+    "concurrently": "^7.3.0",
+    "formik": "^2.2.9",
+    "yup": "^0.32.11"
   }
 }
