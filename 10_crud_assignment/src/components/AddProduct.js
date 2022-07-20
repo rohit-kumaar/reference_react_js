@@ -1,17 +1,31 @@
 import React from "react";
+import { addProducts } from "../services/productService";
+import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 function AddProduct() {
+  const navigate = useNavigate();
+
+  const postData = (values) => {
+    addProducts(values).then((res) => {
+      alert("Product added");
+      navigate("/products");
+    });
+  };
+
   return (
     <>
       <Formik
         initialValues={{ name: "", price: "", quantity: "" }}
         validationSchema={Yup.object({
-          name: Yup.string().required("Please Enter A Product Name"),
-          price: Yup.string().required("Please Enter A Product Price"),
-          quantity: Yup.string().required("Please Enter A Product Quantity"),
+          name: Yup.string()
+            .min(5, "Must be 15 characters or less")
+            .required("Please enter a product name"),
+          price: Yup.string().required("Please enter a product price"),
+          quantity: Yup.string().required("Please enter a product quantity"),
         })}
+        onSubmit={(values) => postData(values)}
       >
         <Form>
           <div className="container">
