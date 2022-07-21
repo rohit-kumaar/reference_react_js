@@ -15,17 +15,21 @@ function AddEmployee() {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string()
+    employee_name: Yup.string()
       .min(5, "Must be 15 characters or less.")
       .required("Please enter a product name."),
-    price: Yup.string().required("Please enter a product price."),
-    quantity: Yup.string().required("Please enter a product quantity."),
+    employee_salary: Yup.string().required("Please enter a product price."),
+    employee_age: Yup.string().required("Please enter a product quantity."),
   });
 
   return (
     <>
       <Formik
-        initialValues={{ name: "", price: "", quantity: "" }}
+        initialValues={{
+          employee_name: "",
+          employee_salary: "",
+          employee_age: "",
+        }}
         validationSchema={validationSchema}
         onSubmit={(values) => postData(values)}
       >
@@ -33,33 +37,41 @@ function AddEmployee() {
           <div className="container">
             <div className="row">
               <div className="col-md-6 mt-5">
-                <label htmlFor="name" className="form-label">
-                  <b>Product Name</b>
+                <label htmlFor="employee_name" className="form-label">
+                  <b>Employee Name</b>
                 </label>
-                <Field type="text" className="form-control" name="name" />
+                <Field
+                  type="text"
+                  className="form-control"
+                  name="employee_name"
+                />
                 <div className="text-danger">
-                  <ErrorMessage name="name" />
+                  <ErrorMessage name="employee_name" />
                 </div>
               </div>
 
               <div className="col-md-6 mt-5">
-                <label htmlFor="price" className="form-label">
-                  <b>Product Price</b>
+                <label htmlFor="employee_salary" className="form-label">
+                  <b>Employee Salary</b>
                 </label>
-                <Field type="text" className="form-control" name="price" />
+                <Field
+                  type="text"
+                  className="form-control"
+                  name="employee_salary"
+                />
                 <div className="text-danger">
-                  <ErrorMessage name="price" />
+                  <ErrorMessage name="employee_salary" />
                 </div>
               </div>
             </div>
 
             <div className="mt-3">
-              <label htmlFor="quantity" className="form-label">
-                <b>Product Quantity</b>
+              <label htmlFor="employee_age" className="form-label">
+                <b>Employee Age</b>
               </label>
-              <Field type="text" className="form-control" name="quantity" />
+              <Field type="text" className="form-control" name="employee_age" />
               <div className="text-danger">
-                <ErrorMessage name="quantity" />
+                <ErrorMessage name="employee_age" />
               </div>
             </div>
 

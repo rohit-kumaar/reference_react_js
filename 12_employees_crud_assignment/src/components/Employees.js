@@ -3,29 +3,29 @@ import { getEmployees, deleteEmployee } from "../services/employeesService";
 import { useNavigate } from "react-router-dom";
 
 function Employees() {
-  const [productsData, setProductsData] = useState([]);
+  const [employeesData, setEmployeesData] = useState([]);
   const navigate = useNavigate();
 
   // Get all products
   useEffect(() => {
-    getEmployees().then((res) => setProductsData(res.data));
+    getEmployees().then((res) => setEmployeesData(res.data));
   }, []);
 
   // Edit Product
-  const editProduct = (id) => {
+  const editEmployee = (id) => {
     navigate(`/edit-employee/${id}`);
   };
 
   // Delete product
-  const deleteProduct = (id) => {
-    if (window.confirm("Do you want to delete this product")) {
+  const deleteEmployee = (id) => {
+    if (window.confirm("Do you want to remove this employee?")) {
       deleteEmployee(id).then((res) => {
         if (res) {
-          alert("Product is deleted");
-          const remainProduct = productsData.filter(
-            (product) => product.id !== id
+          alert("Employee  deleted");
+          const remainEmployees = employeesData.filter(
+            (employee) => employee.id !== id
           );
-          setProductsData(remainProduct);
+          setEmployeesData(remainEmployees);
         }
       });
     }
@@ -36,26 +36,31 @@ function Employees() {
       <div className="container">
         <div className="cards p-4">
           <div className="row">
-            {productsData?.map((product) => {
+            {employeesData?.map((employee) => {
               return (
-                <div className="col-12 col-sm-6 col-lg-4 col-xl-3 mb-2" key={product.id}>
+                <div
+                  className="col-12 col-sm-6 col-lg-4 col-xl-3 mb-2"
+                  key={employee.id}
+                >
                   <div className="card ">
                     <div className="card-body">
-                      <h5 className="card-title">Product : {product.name}</h5>
+                      <h5 className="card-title">
+                        Employee : {employee.employee_name}
+                      </h5>
                       <p className="card-text">
-                        <span>Rs. {product.price}</span>
+                        <span>Salary: {employee.employee_salary}</span>
                         <br />
-                        <span>Quantity : {product.quantity}</span>
+                        <span>Age : {employee.employee_age}</span>
                       </p>
                       <button
                         className="btn btn-primary"
-                        onClick={() => editProduct(product.id)}
+                        onClick={() => editEmployee(employee.id)}
                       >
                         Edit
                       </button>
                       <button
                         className="btn btn-danger ms-2"
-                        onClick={() => deleteProduct(product.id)}
+                        onClick={() => deleteEmployee(employee.id)}
                       >
                         Delete
                       </button>
