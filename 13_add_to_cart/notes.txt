@@ -1,0 +1,20 @@
+
+    -> Local Data Storage 
+       -> cookies :- 4kb 
+          -> persistance :- permanent 
+          -> non-persistance :- temporary 
+       -> localStorage :- It is permanent and store upto 5 mb of data 
+           -> How we set a data 
+              localStorage.setItem(key,value)
+           -> Read Data 
+              localStorage.getItem(key)
+           -> Remove Data 
+              localStorage.removeItem(key)
+       -> sessionStorage :- It is temporary and store upto 5mb of data 
+            -> How we set a data 
+              sessionStorage.setItem(key,value)
+           -> Read Data 
+              sessionStorage.getItem(key)
+           -> Remove Data 
+              sessionStorage.removeItem(key)
+      
