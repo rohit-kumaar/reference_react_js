@@ -1,22 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AddProduct from "./components/AddProduct";
-import EditProduct from "./components/EditProduct";
-import Home from "./components/Home";
+import AddEmployee from "./components/AddEmployee";
+import EditEmployee from "./components/EditEmployee";
+import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
-import Products from "./components/Products";
+import Employees from "./components/Employees";
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/edit-product/:id" element={<EditProduct />} />
-          <Route path="/add-product" element={<AddProduct />} />
-        </Routes>
+        <div className="mt-5">
+          <Routes>
+            <Route path="/" element={<Profile />} />
+            <Route path="/employees" element={<Employees />} />
+            <Route path="/edit-employee/:id" element={<EditEmployee />} />
+            <Route path="/add-employee" element={<AddEmployee />} />
+          </Routes>
+        </div>
       </Router>
     </>
   );

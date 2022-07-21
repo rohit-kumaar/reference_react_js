@@ -1,16 +1,16 @@
 import React from "react";
-import { addProducts } from "../services/productService";
+import { addEmployees } from "../services/employeesService";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-function AddProduct() {
+function AddEmployee() {
   const navigate = useNavigate();
 
   const postData = (values) => {
-    addProducts(values).then((res) => {
+    addEmployees(values).then((res) => {
       alert("Product added");
-      navigate("/products");
+      navigate("/employees");
     });
   };
 
@@ -73,4 +73,4 @@ function AddProduct() {
   );
 }
 
-export default AddProduct;
+export default AddEmployee;

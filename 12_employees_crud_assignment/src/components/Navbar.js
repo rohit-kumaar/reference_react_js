@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark ">
+      <nav className="navbar navbar-expand-lg bg-dark fixed-top">
         <div className="container-fluid ">
           <a className="navbar-brand text-light" href="#">
             CRUD
@@ -28,25 +28,25 @@ function Navbar() {
                   className="nav-link text-light"
                   aria-current="page"
                 >
-                  Home
+                  Profile
                 </NavLink>
               </li>
               <li className="nav-item ">
                 <NavLink
-                  to="/products"
+                  to="/employees"
                   className="nav-link text-light"
                   aria-current="page"
                 >
-                  Products
+                  Employees
                 </NavLink>
               </li>
               <li className="nav-item ">
                 <NavLink
-                  to="/add-product"
+                  to="/add-employee"
                   className="nav-link text-light"
                   aria-current="page"
                 >
-                  Add Product
+                  Add Employee
                 </NavLink>
               </li>
             </ul>
