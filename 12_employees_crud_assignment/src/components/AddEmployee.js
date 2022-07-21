@@ -16,10 +16,10 @@ function AddEmployee() {
 
   const validationSchema = Yup.object({
     employee_name: Yup.string()
-      .min(5, "Must be 15 characters or less.")
-      .required("Please enter a product name."),
-    employee_salary: Yup.string().required("Please enter a product price."),
-    employee_age: Yup.string().required("Please enter a product quantity."),
+      .min(5, "Must be 5 characters or greater.")
+      .required("Please enter a employee name."),
+    employee_salary: Yup.string().required("Please enter a employee salary."),
+    employee_age: Yup.string().required("Please enter a employee age."),
   });
 
   return (
