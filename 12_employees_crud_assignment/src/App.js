@@ -11,13 +11,14 @@ function App() {
     <>
       <Router>
         <Navbar />
-
-        <Routes>
-          <Route path="/" element={<Profile />} />
-          <Route path="/employees" element={<Employees />} />
-          <Route path="/edit-employee/:id" element={<EditEmployee />} />
-          <Route path="/add-employee" element={<AddEmployee />} />
-        </Routes>
+        <div className="mt-5">
+          <Routes>
+            <Route path="/" element={<Profile />} />
+            <Route path="/employees" element={<Employees />} />
+            <Route path="/edit-employee/:id" element={<EditEmployee />} />
+            <Route path="/add-employee" element={<AddEmployee />} />
+          </Routes>
+        </div>
       </Router>
     </>
   );

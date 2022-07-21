@@ -2,7 +2,7 @@
   "employees": [
     {
       "id": 1,
-      "employee_name": "Tiger Nixon",
+      "employee_name": "Tiger Nixoy",
       "employee_salary": 320800,
       "employee_age": 61
     },
@@ -143,12 +143,6 @@
       "employee_name": "Doris Wilder",
       "employee_salary": 85600,
       "employee_age": 23
-    },
-    {
-      "employee_name": "rohit",
-      "employee_salary": "300000",
-      "employee_age": "31",
-      "id": 25
     }
   ]
 }

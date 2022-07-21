@@ -17,7 +17,7 @@ function EditEmployee() {
 
   const updateData = (data) => {
     updateEmployee(id, data).then((res) => {
-      alert("Product Updated");
+      alert("Employee details is updated");
       navigate("/employees");
     });
   };

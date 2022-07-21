@@ -6,18 +6,18 @@ function Employees() {
   const [employeesData, setEmployeesData] = useState([]);
   const navigate = useNavigate();
 
-  // Get all products
+  // Get all Employees
   useEffect(() => {
     getEmployees().then((res) => setEmployeesData(res.data));
   }, []);
 
-  // Edit Product
+  // Edit Employee
   const editEmployee = (id) => {
     navigate(`/edit-employee/${id}`);
   };
 
-  // Delete product
-  const deleteEmployee = (id) => {
+  // Delete Employee
+  const deleteEmp = (id) => {
     if (window.confirm("Do you want to remove this employee?")) {
       deleteEmployee(id).then((res) => {
         if (res) {
@@ -60,7 +60,7 @@ function Employees() {
                       </button>
                       <button
                         className="btn btn-danger ms-2"
-                        onClick={() => deleteEmployee(employee.id)}
+                        onClick={() => deleteEmp(employee.id)}
                       >
                         Delete
                       </button>

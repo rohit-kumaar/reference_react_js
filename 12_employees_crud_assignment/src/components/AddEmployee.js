@@ -9,7 +9,7 @@ function AddEmployee() {
 
   const postData = (values) => {
     addEmployees(values).then((res) => {
-      alert("Product added");
+      alert("New employee is added");
       navigate("/employees");
     });
   };
