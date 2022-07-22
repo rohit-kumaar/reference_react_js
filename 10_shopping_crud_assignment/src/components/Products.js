@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Products() {
   const [productsData, setProductsData] = useState([]);
   const navigate = useNavigate();
-  
+
   // Get all products
   useEffect(() => {
     getProducts().then((res) => setProductsData(res.data));
@@ -31,6 +31,41 @@ function Products() {
     }
   };
 
+  // Add to cart
+  const addToCart = (product) => {
+    alert(`Product ID ${product.id}`);
+    if (localStorage.getItem("addtocart")) {
+      const cart = JSON.parse(localStorage.getItem("addtocart"));
+      console.log(`cart`,cart);
+
+      for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id !== product.id) {
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: product.quantity,
+          });
+          localStorage.setItem("addtocart", JSON.stringify(cart));
+          console.log(`ID  ${product.id} is NOT matched`, cart[i]);
+        } else {
+          cart[i].quantity += 1;
+          localStorage.setItem("addtocart", JSON.stringify(cart));
+          console.log(`ID  ${product.id} is  matched`, cart[i]);
+        }
+      }
+    } else {
+      const cart = [];
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        quantity: product.quantity,
+      });
+      localStorage.setItem("addtocart", JSON.stringify(cart));
+    }
+  };
+
   return (
     <>
       <div className="container">
@@ -38,7 +73,10 @@ function Products() {
           <div className="row">
             {productsData?.map((product) => {
               return (
-                <div className="col-sm-5 m-2" key={product.id}>
+                <div
+                  className="col-12 col-sm-6 col-lg-4 col-xl-3 mb-2"
+                  key={product.id}
+                >
                   <div className="card ">
                     <div className="card-body">
                       <h5 className="card-title">Product : {product.name}</h5>
@@ -58,6 +96,12 @@ function Products() {
                         onClick={() => deleteProduct(product.id)}
                       >
                         Delete
+                      </button>
+                      <button
+                        className="btn btn-dark ms-2"
+                        onClick={() => addToCart(product)}
+                      >
+                        Add to cart
                       </button>
                     </div>
                   </div>
