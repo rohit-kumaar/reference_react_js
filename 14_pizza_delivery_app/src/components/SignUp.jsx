@@ -9,7 +9,8 @@ function SignUp() {
 
   const regd = (values) => {
     addUser(values).then((res) => {
-      navigate('/menu-list');
+      alert('Your are registered successfully');
+      navigate('/login');
     });
   };
 
