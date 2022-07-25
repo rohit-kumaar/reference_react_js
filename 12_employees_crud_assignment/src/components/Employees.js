@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 function Employees() {
   const [employeesData, setEmployeesData] = useState([]);
   const navigate = useNavigate();
-
   // Get all Employees
   useEffect(() => {
     getEmployees().then((res) => setEmployeesData(res.data));
