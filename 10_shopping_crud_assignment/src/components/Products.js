@@ -36,7 +36,6 @@ function Products() {
     alert(`Product ID ${product.id}`);
     if (localStorage.getItem("addtocart")) {
       const cart = JSON.parse(localStorage.getItem("addtocart"));
-      console.log(`cart`,cart);
 
       for (let i = 0; i < cart.length; i++) {
         if (cart[i].id !== product.id) {
