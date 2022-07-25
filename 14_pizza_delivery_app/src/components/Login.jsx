@@ -8,6 +8,8 @@ function Login() {
   const navigate = useNavigate();
 
   const [usersData, setUsersData] = useState([]);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     getUsers().then((res) => {
@@ -15,13 +17,21 @@ function Login() {
     });
   }, []);
 
-  const login = (values) => {
+  const login = () => {
+    usersData.forEach((user) => {
+      email.toLowerCase() === user.emailId &&
+        password.toLowerCase() === user.password &&
+        navigate('/menu-list');
+    });
+  };
+
+  const submit = (values) => {
     navigate('/menu-list');
   };
 
   const validationSchema = Yup.object({
-    emailId: Yup.string().required('Please enter a email id.'),
-    password: Yup.string().required('Please enter a  password'),
+    emailId: Yup.string().required('Please enter a valid email.'),
+    password: Yup.string().required('Please enter a valid password'),
   });
 
   return (
@@ -32,7 +42,7 @@ function Login() {
           password: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => login(values)}
+        onSubmit={(values) => submit(values)}
       >
         <Form className="container mx-auto px-8">
           <h1 className="mb-4 text-4xl font-medium">Login</h1>
@@ -43,6 +53,8 @@ function Login() {
               autoComplete="email"
               className="login-input p-3"
               placeholder="Email address"
+              value={email}
+              onChange={(evt) => setEmail(evt.target.value)}
             />
 
             <div className="text-base  text-red-700">
@@ -56,6 +68,8 @@ function Login() {
               autoComplete="current-password"
               className="login-input p-3"
               placeholder="Password"
+              value={password}
+              onChange={(evt) => setPassword(evt.target.value)}
             />
 
             <div className="text-base  text-red-700">
@@ -63,8 +77,8 @@ function Login() {
             </div>
           </div>
 
-          <button type="submit" className="btn inline-block">
-            Save
+          <button type="submit" className="btn inline-block" onClick={() => login()}>
+            Login
           </button>
         </Form>
       </Formik>
