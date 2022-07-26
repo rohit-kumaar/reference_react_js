@@ -1,5 +1,6 @@
 import React from 'react';
 import data from '../data/menu';
+import { addToCart } from '../hooks/useAddToCart';
 import productImage from '../assets/images/pizza.jpg';
 
 function MenuList() {
@@ -20,7 +21,9 @@ function MenuList() {
                 <img loading="lazy" src={productImage} alt="pizza" title={product.title} />
                 <h2 className="text-xl font-bold">{product.name}</h2>
                 <div className="mt-3 flex items-center gap-4">
-                  <button className="btn">Add to Cart</button>
+                  <button onClick={() => addToCart(product)} className="btn">
+                    Add to Cart
+                  </button>
                   <span className="font-bold">
                     $<span>{product.price}</span>
                   </span>

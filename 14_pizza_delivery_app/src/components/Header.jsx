@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.PNG';
 import Btn from './Btn';
 
 function Header() {
   const [isToggle, setIsToggle] = useState(false);
+  const [addedCart, setAddedCart] = useState(0);
+
+  useEffect(() => {
+    if (localStorage.getItem('cart')) {
+      let cartItem = JSON.parse(localStorage.getItem('cart'));
+      setAddedCart(cartItem.length);
+    }
+  }, []);
 
   return (
     <>
@@ -54,7 +62,7 @@ function Header() {
                   <li>
                     <Link to="#" className="font-medium text-slate-500">
                       Cart
-                      <span className="btn py-0 px-1.5 text-xs font-medium">6</span>
+                      <span className="btn ml-1 py-0 px-1.5 text-xs font-medium">{addedCart}</span>
                     </Link>
                   </li>
 
