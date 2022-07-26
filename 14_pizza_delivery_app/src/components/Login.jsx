@@ -25,7 +25,7 @@ function Login() {
     });
   };
 
-  const submit = (values) => {
+  const submit = () => {
     navigate('/menu-list');
   };
 

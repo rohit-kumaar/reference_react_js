@@ -8,10 +8,20 @@ function SignUp() {
   const navigate = useNavigate();
 
   const regd = (values) => {
-    addUser(values).then((res) => {
+    addUser(values).then(() => {
       alert('Your are registered successfully');
       navigate('/login');
     });
+
+    if (localStorage.getItem('regd')) {
+      const regdUser = JSON.parse(localStorage.getItem('regd'));
+      regdUser.push(values);
+      localStorage.setItem('regd', JSON.stringify(regdUser));
+    } else {
+      let regdUser = [];
+      regdUser.push(values);
+      localStorage.setItem('regd', JSON.stringify(regdUser));
+    }
   };
 
   const validationSchema = Yup.object({
