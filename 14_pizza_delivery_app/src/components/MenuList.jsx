@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../data/menu';
 import { addToCart } from '../hooks/useAddToCart';
 import productImage from '../assets/images/pizza.jpg';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function MenuList() {

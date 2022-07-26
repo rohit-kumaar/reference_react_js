@@ -13,7 +13,3 @@
 }
 
 @tailwind utilities;
-
-.active {
-  transform: translateX(100%);
-}
