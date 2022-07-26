@@ -4,7 +4,7 @@ import logo from '../assets/images/logo.PNG';
 import Btn from './Btn';
 
 function Header() {
-  const [toggle, setToggle] = useState(false);
+  const [isToggle, setIsToggle] = useState(false);
 
   return (
     <>
@@ -42,7 +42,7 @@ function Header() {
               <nav>
                 <ul
                   className={`
-                  ${toggle == false ? 'active' : ''}  
+                  ${isToggle === false ? 'active' : ''}  
                    fixed top-0 right-0 bottom-0 left-20 z-10 flex flex-col gap-6 bg-slate-200/40 p-12 backdrop-blur-xl transition-transform duration-700 sm:static sm:left-0 sm:translate-x-0 sm:flex-row sm:items-center sm:justify-center sm:bg-transparent sm:p-0 sm:transition-none`}
                 >
                   <li>
@@ -77,9 +77,9 @@ function Header() {
                 <div className="cursor-pointer sm:hidden">
                   <i
                     className={`
-                     ${toggle === true ? 'bx-x-circle' : ' bx-menu'}
+                     ${isToggle === true ? 'bx-x-circle' : ' bx-menu'}
                     bx relative z-20 text-4xl`}
-                    onClick={() => setToggle(!toggle)}
+                    onClick={() => setIsToggle(!isToggle)}
                   ></i>
                 </div>
               </nav>
