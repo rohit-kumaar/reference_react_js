@@ -1,9 +1,37 @@
-import React from 'react'
+import React from 'react';
+import data from '../data/menu';
+import productImage from '../assets/images/pizza.jpg';
 
 function MenuList() {
+  const products = data.menu;
+
   return (
-    <div>MenuList</div>
-  )
+    <>
+      <section className="-z-10 mt-32">
+        <div className="container mx-auto px-8">
+          <h1 className="mb-4 text-4xl font-medium">Menu</h1>
+
+          <div className="cards grid gap-x-5 gap-y-3 sm:grid-cols-2 md:grid-cols-3">
+            {products?.map((product) => (
+              <div
+                key={product.id}
+                className="card flex flex-col items-center rounded border border-slate-300 p-5"
+              >
+                <img loading="lazy" src={productImage} alt="pizza" title={product.title} />
+                <h2 className="text-xl font-bold">{product.name}</h2>
+                <div className="mt-3 flex items-center gap-4">
+                  <button className="btn">Add to Cart</button>
+                  <span className="font-bold">
+                    $<span>{product.price}</span>
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
 
-export default MenuList
+export default MenuList;
