@@ -37,22 +37,49 @@ function Products() {
     if (localStorage.getItem("addtocart")) {
       const cart = JSON.parse(localStorage.getItem("addtocart"));
 
+      let bool = false;
+      let pId = null;
+
       for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id !== product.id) {
-          cart.push({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            quantity: product.quantity,
-          });
-          localStorage.setItem("addtocart", JSON.stringify(cart));
-          console.log(`ID  ${product.id} is NOT matched`, cart[i]);
-        } else {
-          cart[i].quantity += 1;
-          localStorage.setItem("addtocart", JSON.stringify(cart));
-          console.log(`ID  ${product.id} is  matched`, cart[i]);
+        if (cart[i].id === product.id) {
+          bool = true;
+          pId = i;
+
+          // alert('Not Found')
+          // cart.push({
+          //   id: product.id,
+          //   name: product.name,
+          //   price: product.price,
+          //   quantity: product.quantity,
+          // });
+          // localStorage.setItem("addtocart", JSON.stringify(cart));
+          // console.log(`ID  ${product.id} is NOT matched`, cart[i]);
         }
+
+        // } else {
+        //   alert("Found")
+        //   // cart[i].quantity += 1;
+        //   // localStorage.setItem("addtocart", JSON.stringify(cart));
+        //   // console.log(`ID  ${product.id} is  matched`, cart[i]);
+        // }
       }
+
+      if (bool === true) {
+        alert(product.id)
+        cart[pId].quantity += 1;
+        localStorage.setItem("addtocart", JSON.stringify(cart));
+        // console.log(`ID  ${product.id} is  matched`, cart[i]);
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          quantity: product.quantity,
+        });
+        localStorage.setItem("addtocart", JSON.stringify(cart));
+      }
+
+
     } else {
       const cart = [];
       cart.push({

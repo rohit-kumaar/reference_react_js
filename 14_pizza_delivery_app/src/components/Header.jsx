@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.PNG';
 import Btn from './Btn';
+import { URL } from '../url';
 
 function Header() {
   const [isToggle, setIsToggle] = useState(false);
@@ -30,7 +31,7 @@ function Header() {
             </Link>
 
             <div>
-              {window.location.href === 'http://localhost:3000/sign-up' && (
+              {window.location.href === `${URL}sign-up` && (
                 <Btn link="/login" text="Login" className="ml-0.5" />
               )}
 
@@ -51,7 +52,7 @@ function Header() {
                 <ul
                   className={`
                   ${isToggle === false ? 'translate-x-full' : ''}  
-                   fixed top-0 right-0 bottom-0 left-20 z-10 flex  flex-col gap-6 bg-slate-200/40 p-12 backdrop-blur-xl transition-transform duration-700 sm:static sm:left-0 sm:translate-x-0 sm:flex-row sm:items-center sm:justify-center sm:bg-transparent sm:p-0 sm:transition-none`}
+                   fixed  inset-0 z-10 flex  flex-col gap-6 bg-slate-200/40 p-12 backdrop-blur-xl transition-transform duration-700 sm:static sm:left-0 sm:translate-x-0 sm:flex-row sm:items-center sm:justify-center sm:bg-transparent sm:p-0 sm:transition-none`}
                 >
                   <li>
                     <Link to="#" className="font-medium text-slate-500">
