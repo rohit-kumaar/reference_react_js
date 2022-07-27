@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { URL } from '../services/url';
 import logo from '../assets/images/logo.PNG';
 import Btn from './Btn';
-import { URL } from '../services/url';
 
 function Header() {
   const [isToggle, setIsToggle] = useState(false);
@@ -35,11 +35,11 @@ function Header() {
                 <Btn link="/login" text="Login" className="ml-0.5" />
               )}
 
-              {window.location.href === 'http://localhost:3000/login' && (
+              {window.location.href === `${URL}login` && (
                 <Btn link="/sign-up" text="Sign Up" className="mr-0.5" />
               )}
 
-              {window.location.href === 'http://localhost:3000/' && (
+              {window.location.href === `${URL}` && (
                 <>
                   <Btn link="/sign-up" text="Sign Up" className="mr-0.5" />
                   <Btn link="/login" text="Login" className="ml-0.5" />
@@ -47,7 +47,7 @@ function Header() {
               )}
             </div>
 
-            {window.location.href === 'http://localhost:3000/menu-list' && (
+            {window.location.href === `${URL}menu-list` && (
               <nav>
                 <ul
                   className={`
