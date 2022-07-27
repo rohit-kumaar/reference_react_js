@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.PNG';
 import Btn from './Btn';
-import { URL } from '../url';
+import { URL } from '../services/url';
 
 function Header() {
   const [isToggle, setIsToggle] = useState(false);

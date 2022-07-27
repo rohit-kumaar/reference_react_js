@@ -33,9 +33,14 @@ function Products() {
 
   // Add to cart
   const addToCart = (product) => {
-    alert(`Product ID ${product.id}`);
     if (localStorage.getItem("addtocart")) {
       const cart = JSON.parse(localStorage.getItem("addtocart"));
+
+      /* 
+
+        This is checking if the product is already in the cart. If it is, it will increase the quantity by 1. If it is not, it will add the product to the cart. 
+
+      */
 
       let bool = false;
       let pId = null;
@@ -44,31 +49,12 @@ function Products() {
         if (cart[i].id === product.id) {
           bool = true;
           pId = i;
-
-          // alert('Not Found')
-          // cart.push({
-          //   id: product.id,
-          //   name: product.name,
-          //   price: product.price,
-          //   quantity: product.quantity,
-          // });
-          // localStorage.setItem("addtocart", JSON.stringify(cart));
-          // console.log(`ID  ${product.id} is NOT matched`, cart[i]);
         }
-
-        // } else {
-        //   alert("Found")
-        //   // cart[i].quantity += 1;
-        //   // localStorage.setItem("addtocart", JSON.stringify(cart));
-        //   // console.log(`ID  ${product.id} is  matched`, cart[i]);
-        // }
       }
 
       if (bool === true) {
-        alert(product.id)
         cart[pId].quantity += 1;
         localStorage.setItem("addtocart", JSON.stringify(cart));
-        // console.log(`ID  ${product.id} is  matched`, cart[i]);
       } else {
         cart.push({
           id: product.id,
@@ -78,8 +64,6 @@ function Products() {
         });
         localStorage.setItem("addtocart", JSON.stringify(cart));
       }
-
-
     } else {
       const cart = [];
       cart.push({
