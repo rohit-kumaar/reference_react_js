@@ -16,7 +16,6 @@ function Checkout() {
             autoComplete="text"
             required
             className="block w-full border border-gray-300 px-3 py-3 sm:text-sm"
-            placeholder="Enter Quantity"
           />
           <span className="mb-5 flex items-center gap-2 font-medium">
             Order Total: <span className="text-xl font-bold">$18.3</span>
