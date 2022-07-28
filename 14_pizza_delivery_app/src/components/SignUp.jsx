@@ -13,15 +13,15 @@ function SignUp() {
       navigate('/login');
     });
 
-    if (localStorage.getItem('regd')) {
-      const regdUser = JSON.parse(localStorage.getItem('regd'));
-      regdUser.push(values);
-      localStorage.setItem('regd', JSON.stringify(regdUser));
-    } else {
-      let regdUser = [];
-      regdUser.push(values);
-      localStorage.setItem('regd', JSON.stringify(regdUser));
-    }
+    // if (localStorage.getItem('regd')) {
+    //   const regdUser = JSON.parse(localStorage.getItem('regd'));
+    //   regdUser.push(values);
+    //   localStorage.setItem('regd', JSON.stringify(regdUser));
+    // } else {
+    //   let regdUser = [];
+    //   regdUser.push(values);
+    //   localStorage.setItem('regd', JSON.stringify(regdUser));
+    // }
   };
 
   const validationSchema = Yup.object({

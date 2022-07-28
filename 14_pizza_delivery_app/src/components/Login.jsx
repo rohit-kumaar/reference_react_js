@@ -25,9 +25,9 @@ function Login() {
     });
   };
 
-  const submit = () => {
-    navigate('/menu-list');
-  };
+  // const submit = () => {
+  //   navigate('/menu-list');
+  // };
 
   const validationSchema = Yup.object({
     emailId: Yup.string().required('Please enter a valid email.'),
@@ -42,7 +42,7 @@ function Login() {
           password: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => submit(values)}
+        // onSubmit={(values) => submit(values)}
       >
         <Form className="container mx-auto px-8">
           <h1 className="mb-4 text-4xl font-medium">Login</h1>

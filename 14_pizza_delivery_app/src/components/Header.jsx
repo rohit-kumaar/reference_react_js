@@ -47,7 +47,9 @@ function Header() {
               )}
             </div>
 
-            {window.location.href === `${URL}menu-list` && (
+            {(window.location.href === `${URL}menu-list` ||
+              window.location.href === `${URL}shopping-cart` ||
+              window.location.href === `${URL}checkout`) && (
               <nav>
                 <ul
                   className={`
@@ -61,7 +63,7 @@ function Header() {
                   </li>
 
                   <li>
-                    <Link to="#" className="font-medium text-slate-500">
+                    <Link to="/shopping-cart" className="font-medium text-slate-500">
                       Cart
                       <span className="btn ml-1 py-0 px-1.5 text-xs font-medium">{addedCart}</span>
                     </Link>

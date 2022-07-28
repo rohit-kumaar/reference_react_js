@@ -7,3 +7,4 @@ const getUsersById = (id) => axios.get(`${USERS_URL}${id}`);
 const addUser = (data) => axios.post(USERS_URL, data);
 
 export { getUsers, getUsersById, addUser };
+
