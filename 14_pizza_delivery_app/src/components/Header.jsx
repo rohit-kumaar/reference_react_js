@@ -58,7 +58,7 @@ function Header() {
                    fixed  inset-0 z-20 flex  flex-col gap-6 bg-slate-200/40 p-12 backdrop-blur-xl transition-transform duration-700 sm:static sm:left-0 sm:translate-x-0 sm:flex-row sm:items-center sm:justify-center sm:bg-transparent sm:p-0 sm:transition-none`}
                 >
                   <li>
-                    <Link to="#" className="font-medium text-slate-500">
+                    <Link to="/menu-list" className="font-medium text-slate-500">
                       Menu
                     </Link>
                   </li>
