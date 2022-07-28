@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Header />
 
-        <main>
+        <main className="mt-32">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sign-up" element={<SignUp />} />

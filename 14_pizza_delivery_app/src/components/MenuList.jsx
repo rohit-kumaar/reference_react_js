@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../data/menu';
 import { addToCart } from '../hooks/useAddToCart';
 import productImage from '../assets/images/pizza.jpg';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function MenuList() {
@@ -10,7 +10,7 @@ function MenuList() {
 
   return (
     <>
-      <section className="-z-10 mt-10">
+      <section className="-z-10">
         <div className="container mx-auto px-8">
           <h1 className="mb-4 text-4xl font-medium">Menu</h1>
 

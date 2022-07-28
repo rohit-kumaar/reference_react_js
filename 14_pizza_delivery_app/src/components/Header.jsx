@@ -17,8 +17,8 @@ function Header() {
 
   return (
     <>
-      <header className="mb-7">
-        <div className="container mx-auto px-8">
+      <header className="relative mb-7">
+        <div className="container fixed top-0 mx-auto px-8">
           <div className="flex h-[15vh] items-center justify-between bg-slate-100 px-4">
             <Link to="/">
               <img
@@ -49,12 +49,13 @@ function Header() {
 
             {(window.location.href === `${URL}menu-list` ||
               window.location.href === `${URL}shopping-cart` ||
-              window.location.href === `${URL}checkout`) && (
+              window.location.href === `${URL}checkout` ||
+              window.location.href === `${URL}order-placed`) && (
               <nav>
                 <ul
                   className={`
                   ${isToggle === false ? 'translate-x-full' : ''}  
-                   fixed  inset-0 z-10 flex  flex-col gap-6 bg-slate-200/40 p-12 backdrop-blur-xl transition-transform duration-700 sm:static sm:left-0 sm:translate-x-0 sm:flex-row sm:items-center sm:justify-center sm:bg-transparent sm:p-0 sm:transition-none`}
+                   fixed  inset-0 z-20 flex  flex-col gap-6 bg-slate-200/40 p-12 backdrop-blur-xl transition-transform duration-700 sm:static sm:left-0 sm:translate-x-0 sm:flex-row sm:items-center sm:justify-center sm:bg-transparent sm:p-0 sm:transition-none`}
                 >
                   <li>
                     <Link to="#" className="font-medium text-slate-500">

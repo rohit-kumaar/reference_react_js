@@ -4,7 +4,7 @@ import Btn from './Btn';
 function OrderPlaced() {
   return (
     <>
-      <section className="-z-10 mt-10">
+      <section className="-z-10">
         <div className="container mx-auto px-8">
           <h1 className="mb-4 text-4xl font-medium">Order has been paid successfully!</h1>
 
