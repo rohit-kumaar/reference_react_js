@@ -1,0 +1,40 @@
+
+      -> React Hooks :- Hooks were added to React in version 16.8.Hooks allow function components to have access to state and other React features.
+        -> Hooks are start with prefix (use)
+        -> useState() :- It is used to manage a state.
+          eg:
+          import React,{useState} from 'react';
+          const [count,setCount]=useState(0);//set state 
+            {count} //get state 
+             setCount(count+1) //update state 
+        -> useEffect():- It carries out an effect each time there is a state change.By default , it runs after the first render and every time the state is updated 
+           -> mounting (componentDidMount)
+             useEffect(()=>{
+                logics 
+             },[])
+           -> updating (componentDidUpdate)
+                useEffect(()=>{
+                logics 
+             },[state])
+           -> unmounting (componentWillUnmount)
+              useEffect(()=>{
+                return ()=>{
+                  //code
+                }
+             },[])
+        ---> How we create our custom hook 
+        import React,{useState,useEffect} from 'react'
+import axios from "axios";
+export default function useFetchData(url){
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+       axios.get(url)
+       .then(res=> setData(res.data))
+    },[])
+    return data;
+}
+  -> useRef :- It allows to directly create reference to the DOM element in the function component (Uncontrolled Components) (return a mutable ref object)
+    -> all properties of the element is access with .current property
+   *** In a controlled component , form data is handled by react component 
+       In a uncontrolled component , form data is handled by the DOM itself.
+      
