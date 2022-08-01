@@ -1,0 +1,11 @@
+
+  -> useContext() :- (Context API) :- Context provides a way to pass data or state through the component tree without having to pass props down manually through each nested component.It is an alternate of Redux.Used to share a global data for a tree of react components.
+  
+    Context API uses Context.
+      -> Provider :- we pass the data 
+      -> Consumer :- we get the data 
+      useContext hook helps to make code more readable.
+      createContext() , useContext()
+
+    -> It is a hook used that return a memoized value.It improves performance in our application.
+      
