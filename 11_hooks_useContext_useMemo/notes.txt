@@ -7,5 +7,4 @@
       useContext hook helps to make code more readable.
       createContext() , useContext()
 
-    -> It is a hook used that return a memoized value.It improves performance in our application.
-      
+     -> useMemo() : It is a hook used that return a memoized value.It improves performance in our application.

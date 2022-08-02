@@ -1,0 +1,7 @@
+
+    -> useCallback(): returns a memoized callback function. It only runs when one of its dependencies update.
+
+    -> memo :-It is a hoc .If our component render the same result given the same props , we can wrap it in memo.
+
+    -> useReducer() :- i will explain you after the redux. 
+      
