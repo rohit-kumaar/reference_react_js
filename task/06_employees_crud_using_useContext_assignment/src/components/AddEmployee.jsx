@@ -1,13 +1,13 @@
-import React from "react";
 import { addEmployees } from "../services/employeesService";
-import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 function AddEmployee() {
   const navigate = useNavigate();
 
-  const postData = (values) => {
+  // Create Employees
+  const createEmployee = (values) => {
     addEmployees(values).then((res) => {
       alert("New employee is added");
       navigate("/employees");
@@ -31,7 +31,7 @@ function AddEmployee() {
           employee_age: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => postData(values)}
+        onSubmit={(values) => createEmployee(values)}
       >
         <Form>
           <div className="container">
