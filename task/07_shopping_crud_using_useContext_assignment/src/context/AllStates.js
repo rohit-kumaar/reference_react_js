@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { context } from "./context";
 
 function AllStates(props) {
@@ -13,13 +13,6 @@ function AllStates(props) {
     }
   }
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("addtocart")) {
-  //     const cart = JSON.parse(localStorage.getItem("addtocart"));
-  //     setCount(cart.length);
-  //   }
-  // }, [count]);
-
   // Add to cart
   const addToCart = (product) => {
     if (localStorage.getItem("addtocart")) {
@@ -28,17 +21,17 @@ function AllStates(props) {
       setCount(cart.length);
 
       let isProduct = false;
-      let isProductId = null;
+      let currentProductId = null;
 
       for (let i = 0; i < cart.length; i++) {
         if (cart[i].id === product.id) {
           isProduct = true;
-          isProductId = i;
+          currentProductId = i;
         }
       }
 
       if (isProduct === true) {
-        cart[isProductId].quantity += 1;
+        cart[currentProductId].quantity += 1;
         localStorage.setItem("addtocart", JSON.stringify(cart));
       } else {
         cart.push({
