@@ -20,6 +20,13 @@
       "lastName": "Kumar",
       "emailId": "lalit@gmail.com",
       "password": "lalit123"
+    },
+    {
+      "firstName": "Ricky",
+      "lastName": "Pong",
+      "emailId": "ricky@gmail.com",
+      "password": "ricky123",
+      "id": 4
     }
   ]
 }

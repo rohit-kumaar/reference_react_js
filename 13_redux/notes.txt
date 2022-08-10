@@ -1,0 +1,14 @@
+--> Redux :- It is an open-source Javascript library for managing and centralizing application state.(State Management). It is a store where we put our global state and react component access the global state from the store and dispatch actions to the store to update data.
+  It is a unidirectional data flow model.
+  -> In one application only 1 store, where we put our global state and we can access these states in any of the component of the application as per the requirement.If there is any change or update in redux state , it automatically updated in an application where it is used.
+    -> Redux 
+    -> Redux Toolkit 
+    --> npm install redux react-redux --save 
+       -> actions :- plain object {type:'', payload:''}, actions are send to the redux store by dispatcher for update state.
+       -> reducer :- It is a pure function , where we define our state and actions 
+       --> redux 
+           createStore :- to create a store 
+       --> react-redux 
+          Provider :- to provide our store to the entire app 
+          useDispatch :- dispatch action to reducer 
+          useSelector :- read state
