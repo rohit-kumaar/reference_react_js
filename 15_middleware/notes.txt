@@ -1,0 +1,14 @@
+->  Middleware :- It is a 3rd party extension point between dispatching an action , and the moment it reaches the reducer.In normal redux we only pass object , but with the help of middleware we can call the function | method , and consume APIs and then send the data to the reducer.
+        -> 2 common middleware we have (redux thunk an redux saga)
+        -> Redux Thunk :-It is a middleware that lets us call action creators that return a function instead of a object.
+            npm install redux-thunk --save 
+
+        -> Redux Saga :- It is a redux middleware library , that is designed to make handling side effects in our application. It work on generator function.
+          Es 6 introduce generator function :- It allow us to write asynchronous code that looks synchronous and it is very easy to test.
+          -> we return multiple values and we can pause a method in a middle and then we can start where it is paused.
+            yield is used to pause a function and * sign is used to define generator function.
+              function * xyz(){
+
+              }
+            -> npm install redux-saga --save 
+      
