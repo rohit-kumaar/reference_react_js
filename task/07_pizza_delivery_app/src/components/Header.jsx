@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { URL } from '../services/url';
-import logo from '../assets/images/logo.PNG';
+import { URL } from 'config';
+import logo from 'assets/images/logo.PNG';
 import Btn from './Btn';
 
 function Header() {
