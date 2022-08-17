@@ -4,6 +4,7 @@ import { URL } from 'config';
 import logo from 'assets/images/logo.PNG';
 import Btn from './Btn';
 import { useSelector } from 'react-redux/es/exports';
+import { ROUTE_PATH } from 'routers/publicRoutes';
 
 function Header() {
   const [isToggle, setIsToggle] = useState(false);
@@ -26,26 +27,26 @@ function Header() {
             </Link>
 
             <div>
-              {window.location.href === `${URL}sign-up` && (
-                <Btn link="/login" text="Login" className="ml-0.5" />
+              {window.location.href === `${URL}${ROUTE_PATH.SignUp}` && (
+                <Btn link={ROUTE_PATH.Login} text="Login" className="ml-0.5" />
               )}
 
-              {window.location.href === `${URL}login` && (
-                <Btn link="/sign-up" text="Sign Up" className="mr-0.5" />
+              {window.location.href === `${URL}${ROUTE_PATH.Login}` && (
+                <Btn link={ROUTE_PATH.SignUp} text="Sign Up" className="mr-0.5" />
               )}
 
               {window.location.href === `${URL}` && (
                 <>
-                  <Btn link="/sign-up" text="Sign Up" className="mr-0.5" />
-                  <Btn link="/login" text="Login" className="ml-0.5" />
+                  <Btn link={ROUTE_PATH.SignUp} text="Sign Up" className="mr-0.5" />
+                  <Btn link={ROUTE_PATH.Login} text="Login" className="ml-0.5" />
                 </>
               )}
             </div>
 
-            {(window.location.href === `${URL}menu-list` ||
-              window.location.href === `${URL}shopping-cart` ||
-              window.location.href === `${URL}checkout` ||
-              window.location.href === `${URL}order-placed`) && (
+            {(window.location.href === `${URL}${ROUTE_PATH.MenuList}` ||
+              window.location.href === `${URL}${ROUTE_PATH.ShoppingCart}` ||
+              window.location.href === `${URL}${ROUTE_PATH.Checkout}` ||
+              window.location.href === `${URL}${ROUTE_PATH.OrderPlaced}`) && (
               <nav>
                 <ul
                   className={`
@@ -53,13 +54,13 @@ function Header() {
                    fixed  inset-0 z-20 flex  flex-col gap-6 bg-slate-200/40 p-12 backdrop-blur-xl transition-transform duration-700 sm:static sm:left-0 sm:translate-x-0 sm:flex-row sm:items-center sm:justify-center sm:bg-transparent sm:p-0 sm:transition-none`}
                 >
                   <li>
-                    <Link to="/menu-list" className="font-medium text-slate-500">
+                    <Link to={ROUTE_PATH.MenuList} className="font-medium text-slate-500">
                       Menu
                     </Link>
                   </li>
 
                   <li>
-                    <Link to="/shopping-cart" className="font-medium text-slate-500">
+                    <Link to={ROUTE_PATH.ShoppingCart} className="font-medium text-slate-500">
                       Cart
                       <span className="btn ml-1 py-0 px-1.5 text-xs font-medium">{addedCart}</span>
                     </Link>
