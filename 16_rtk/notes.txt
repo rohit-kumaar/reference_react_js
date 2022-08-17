@@ -1,0 +1,3 @@
+-> Redux with react tool kit
+https://redux-toolkit.js.org/
+npm install @reduxjs/toolkit react-redux --save 
