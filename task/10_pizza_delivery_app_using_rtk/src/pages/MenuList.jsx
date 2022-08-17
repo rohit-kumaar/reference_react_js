@@ -3,7 +3,7 @@ import data from 'data/menu';
 import productImage from 'assets/images/pizza.jpg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux/es/exports';
 import { addToCart } from 'features/cart/cartSlice';
 
 function MenuList() {
@@ -25,7 +25,7 @@ function MenuList() {
                 <img loading="lazy" src={productImage} alt="pizza" title={product.title} />
                 <h2 className="text-xl font-bold">{product.name}</h2>
                 <div className="mt-3 flex items-center gap-4">
-                  <button className="btn" onClick={() => dispatch(addToCart())}>
+                  <button className="btn" onClick={() => dispatch(addToCart(product))}>
                     Add to Cart
                   </button>
                   <span className="font-bold">

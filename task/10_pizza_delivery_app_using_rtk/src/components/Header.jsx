@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { URL } from 'config';
 import logo from 'assets/images/logo.PNG';
 import Btn from './Btn';
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux/es/exports';
 
 function Header() {
   const [isToggle, setIsToggle] = useState(false);
