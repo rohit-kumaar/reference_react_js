@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Rohit",
+      "lastName": "Kumar",
+      "emailId": "rohit@gmail.com",
+      "password": "rohit123"
+    },
+    {
+      "id": 2,
+      "firstName": "Bibhu",
+      "lastName": "Prasad",
+      "emailId": "bibhu@gmail.com",
+      "password": "bibhu123"
+    },
+    {
+      "id": 3,
+      "firstName": "Lalit",
+      "lastName": "Kumar",
+      "emailId": "lalit@gmail.com",
+      "password": "lalit123"
+    },
+    {
+      "firstName": "Ricky",
+      "lastName": "Pong",
+      "emailId": "ricky@gmail.com",
+      "password": "ricky123",
+      "id": 4
+    }
+  ]
+}
