@@ -35,14 +35,14 @@ export const cartSlice = createSlice({
           localStorage.setItem('cart', JSON.stringify(cart));
           state.value += 1;
 
-          // toastAlert();
+          toastAlert();
         }
       } else {
         const cart = [];
         cart.push({ ...product });
         localStorage.setItem('cart', JSON.stringify(cart));
         state.value += 1;
-        // toastAlert();
+        toastAlert();
       }
     },
   },

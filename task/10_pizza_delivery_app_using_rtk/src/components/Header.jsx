@@ -7,14 +7,6 @@ import { useSelector } from 'react-redux/es/exports';
 
 function Header() {
   const [isToggle, setIsToggle] = useState(false);
-  // const [addedCart, setAddedCart] = useState(0);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem('cart')) {
-  //     let cartItem = JSON.parse(localStorage.getItem('cart'));
-  //     setAddedCart(cartItem.length);
-  //   }
-  // }, []);
 
   const addedCart = useSelector((state) => state.cart.value);
 
