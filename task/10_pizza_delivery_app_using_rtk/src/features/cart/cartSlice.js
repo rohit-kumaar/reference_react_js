@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { toastAlert } from 'utils/toastify';
 
 const initialState = {
-  value: 0,
+  value:
+    localStorage.getItem('cart') != undefined ? JSON.parse(localStorage.getItem('cart')).length : 0,
 };
 
 export const cartSlice = createSlice({
