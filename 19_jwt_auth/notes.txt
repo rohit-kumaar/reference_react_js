@@ -1,0 +1,6 @@
+ const token=localStorage.getItem("_token");
+ axios.post("/addproduct",data,{
+    headers:{
+        Authorization:`Bearer ${token}`
+    }
+ })
