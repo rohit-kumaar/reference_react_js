@@ -1,7 +1,9 @@
 
-     -> JSON Server :- It is a node module that we can use to create demo rest json webservice in less time.
-       -> npm install json-server --g 
-     -> server 
+--> JSON Server :- 
+      It is a node module that we can use to create demo rest json web service in less time.
+      -> npm install json-server --g 
+
+--> server 
         products.json 
         {
           "products":[
@@ -12,5 +14,6 @@
              {"id":5,"pname":"E","price":7456,"quantity"8}
           ]
         }
+        
         json-server --watch products.json --port 3001
       

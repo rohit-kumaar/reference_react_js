@@ -9,10 +9,15 @@
         map() 
 
 
-      -> components :- are the core building block of the react app. They are used for reusability.Every component have their own design and logics.
+      -> components :-
+          Are the core building block of the react app. 
+          They are used for reusability.
+          Every component have their own design and logics.
+
          -> Types of components 
             -> class components 
             -> function components 
+            
             -> class components :-
               Myclass.js 
               import React,{Component} from 'react';

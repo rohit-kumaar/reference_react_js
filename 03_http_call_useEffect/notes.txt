@@ -1,5 +1,7 @@
--> Http client programming in React, fetching json data (HTTP CALL) (How we consume the API)
-  -> fetch :- inbuild method of javascript and it return promise 
+-> Http(Hypertext transfer protocol) client programming in React JS, 
+   fetching json data (HTTP CALL)
+     (How we consume the API) ?
+  -> fetch :- Inbuilt method of javascript and it return promise 
      eg:
       const API="---";
       fetch(API)
@@ -8,6 +10,7 @@
         //
       })
       .catch(err=> console.log(err))
+
   -> axios :- 3rd party package return a promise and give us get | post | put | delete method 
     npm install axios --save 
     eg:
@@ -18,19 +21,28 @@
         console.log(res.data)
       })
       .catch(err=> console.log(err))
+
+  --> useEffect() :-
+      The useEffect Hook allows you to perform side effects in your components.
+      side effects means fetching data, directly updating the DOM, and timers.
+
     -> useEffect() :- mounting , unmounting , updating 
       -> mounting :- when component is loaded 
-        useEffect(()=>{
+         useEffect(()=>{
+            // code
+         },[])
 
-        },[])
-     -> updating :- when any update in state and props 
-       useEffect(()=>{
-
-        },[state|props])
-     -> unmounting :- when we leave from the component (cleanup data)
-      useEffect(()=>{
+      -> unmounting :- when we leave from the component (cleanup data)
+         useEffect(()=>{
           return (){
-            //
+            // code
           }
-        },[])
+         },[])
+
+      -> updating :- when any update in state and props 
+         useEffect(()=>{
+            // code
+         },[state|props])
+
+     
       
