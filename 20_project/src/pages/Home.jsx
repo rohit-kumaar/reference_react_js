@@ -1,7 +1,12 @@
+import { Container } from "@mui/system";
 import React from "react";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <Container>Home</Container>
+    </>
+  );
 }
 
 export default Home;
