@@ -1,0 +1,8 @@
+--> Backend (node | mongodb)
+  -> Download and Install mongodb in system 
+  https://www.mongodb.com/try/download/community 
+    -> after installing 
+      search mongodb compass (GUI)
+    -> open backend folder in cmd 
+      node app.js 
+      
