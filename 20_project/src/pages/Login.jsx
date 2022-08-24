@@ -16,7 +16,7 @@ import Copyright from "components/Copyright";
 
 const theme = createTheme();
 
-function Login() {
+const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -100,6 +100,6 @@ function Login() {
       </Container>
     </ThemeProvider>
   );
-}
+};
 
 export default Login;

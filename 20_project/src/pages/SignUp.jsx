@@ -16,7 +16,7 @@ import Copyright from "components/Copyright";
 
 const theme = createTheme();
 
-function SignUp() {
+const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -100,6 +100,6 @@ function SignUp() {
       </Container>
     </ThemeProvider>
   );
-}
+};
 
 export default SignUp;
