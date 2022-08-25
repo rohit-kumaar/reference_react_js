@@ -33,12 +33,12 @@ const SignUp = () => {
     event.preventDefault();
     registerUser(user)
       .then((result) => {
-        if (result.data.err == 0) {
+        if (!result.data.err) {
           alert(result.data.msg);
           navigate(ROUTE_PATH.Login);
         }
 
-        if (result.data.err == 1) {
+        if (result.data.err) {
           alert(result.data.msg);
         }
       })

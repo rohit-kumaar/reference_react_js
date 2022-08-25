@@ -25,12 +25,7 @@ function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <span
-              onClick={() => navigation(ROUTE_PATH.Home)}
-              style={{ cursor: "pointer" }}
-            >
-              Home
-            </span>
+            Apna Business
           </Typography>
           <Button color="inherit" onClick={() => navigation(ROUTE_PATH.Login)}>
             Login

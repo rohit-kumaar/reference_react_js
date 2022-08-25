@@ -11,6 +11,7 @@ import ForgotPassword from "components/ForgotPassword";
 import CheckBox from "components/CheckBox";
 import { useNavigate } from "react-router-dom";
 import { isAdmin, isLoggedIn, loginUser } from "services/service";
+import { ROUTE_PATH } from "routes/publicRoutes";
 
 const theme = createTheme();
 
@@ -32,14 +33,14 @@ const Login = () => {
 
     loginUser(user)
       .then((result) => {
-        if (result.data.err == 0) {
+        if (!result.data.err) {
           localStorage.setItem("_token", result.data.token);
           isLoggedIn();
           isAdmin();
-          navigate("/products");
+          navigate(ROUTE_PATH.Products);
         }
 
-        if (result.data.err == 1) {
+        if (result.data.err) {
           alert(result.data.msg);
         }
       })

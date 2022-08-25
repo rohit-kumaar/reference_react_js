@@ -2,50 +2,32 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { API_URL } from "config";
 
-function registerUser(data) {
-  return axios.post(`${API_URL}users`, data);
-}
+export const registerUser = (data) => axios.post(`${API_URL}users`, data);
 
-function loginUser(data) {
-  return axios.post(`${API_URL}auth`, data);
-}
+export const loginUser = (data) => axios.post(`${API_URL}auth`, data);
 
-function isLoggedIn() {
+export const isLoggedIn = () => {
   let data = localStorage.getItem("_token");
   if (!data) {
     return false;
   } else {
     return true;
   }
-}
+};
 
-function getToken() {
-  return localStorage.getItem("_token");
-}
+export const getToken = () => localStorage.getItem("_token");
 
-function getUser() {
+export const getUser = () => {
   try {
     return jwt_decode(localStorage.getItem("_token"));
   } catch (e) {
     return null;
   }
-}
+};
 
-function isAdmin() {
-  return !getUser() ? false : getUser().isAdmin;
-}
+export const isAdmin = () => (!getUser() ? false : getUser().isAdmin);
 
-function doLogout() {
+export const doLogout = () => {
   localStorage.removeItem("_token");
   window.location = "/";
-}
-
-export {
-  registerUser,
-  loginUser,
-  isLoggedIn,
-  getToken,
-  getUser,
-  isAdmin,
-  doLogout,
 };
