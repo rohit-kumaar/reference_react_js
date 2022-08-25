@@ -24,8 +24,14 @@ function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+            onClick={() => navigation(ROUTE_PATH.Home)}
+            style={{ cursor: "pointer" }}
+          >
+            Home
           </Typography>
           <Button color="inherit" onClick={() => navigation(ROUTE_PATH.Login)}>
             Login
