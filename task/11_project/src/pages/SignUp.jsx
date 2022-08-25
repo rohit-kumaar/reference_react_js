@@ -1,25 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import { registerUser } from "services/service";
 import Copyright from "components/Copyright";
+import { ROUTE_PATH } from "routes/publicRoutes";
 import RegistrationPageLogo from "components/RegistrationPageLogo";
 import Button from "components/Button";
-import ForgotPassword from "components/ForgotPassword";
-import CheckBox from "components/CheckBox";
 
 const theme = createTheme();
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    contactNumber: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser({ ...user, [name]: value });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    registerUser(user)
+      .then((result) => {
+        if (result.data.err == 0) {
+          alert(result.data.msg);
+          navigate(ROUTE_PATH.Login);
+        }
+
+        if (result.data.err == 1) {
+          alert(result.data.msg);
+        }
+      })
+      .catch((err) => {
+        console.log(`Sign Up ${err}`);
+      });
   };
 
   return (
@@ -34,9 +59,9 @@ const SignUp = () => {
             alignItems: "center",
           }}
         >
-          {/* Logo  */}
-          <RegistrationPageLogo name="Sign Up" />
-          {/* Form  */}
+          {/* A component that is used to display the logo of the application. */}
+          <RegistrationPageLogo name="Sign up" />
+
           <Box
             component="form"
             onSubmit={handleSubmit}
@@ -47,36 +72,62 @@ const SignUp = () => {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              type="email"
-              autoComplete="email"
+              id="firstName"
+              label="First Name"
+              name="firstName"
+              autoComplete="firstName"
               autoFocus
+              onChange={handleChange}
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              id="password"
-              label="Password"
+              id="lastName"
+              label="Last Name"
+              name="lastName"
+              autoComplete="lastName"
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
               name="password"
+              label="Password"
               type="password"
+              id="password"
               autoComplete="current-password"
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="contact"
+              label="Contact Number"
+              name="contactNumber"
+              autoComplete="contact number"
+              onChange={handleChange}
             />
 
-            {/* Checkbox  */}
-            <CheckBox />
-
-            {/* Button  */}
-            <Button name="Sign In" />
-
-            {/* Forgot password? OR Don't have an account? Sign Up */}
-            <ForgotPassword />
+            {/* A component that is used to display the button. */}
+            <Button name="Sign Up" />
           </Box>
         </Box>
-        {/* Copyright  */}
-        <Copyright  />
+
+        {/* A component that is used to display the copyright information.  */}
+        <Copyright />
       </Container>
     </ThemeProvider>
   );

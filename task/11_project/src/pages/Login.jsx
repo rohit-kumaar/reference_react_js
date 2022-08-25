@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -11,17 +9,43 @@ import RegistrationPageLogo from "components/RegistrationPageLogo";
 import Button from "components/Button";
 import ForgotPassword from "components/ForgotPassword";
 import CheckBox from "components/CheckBox";
+import { useNavigate } from "react-router-dom";
+import { isAdmin, isLoggedIn, loginUser } from "services/service";
 
 const theme = createTheme();
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUser({ ...user, [name]: value });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+    loginUser(user)
+      .then((result) => {
+        if (result.data.err == 0) {
+          localStorage.setItem("_token", result.data.token);
+          isLoggedIn();
+          isAdmin();
+          navigate("/products");
+        }
+
+        if (result.data.err == 1) {
+          alert(result.data.msg);
+        }
+      })
+      .catch((err) => {
+        console.log(`Login Failed ${err}`);
+      });
   };
 
   return (
@@ -54,6 +78,7 @@ const Login = () => {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={handleChange}
             />
             <TextField
               margin="normal"
@@ -64,6 +89,7 @@ const Login = () => {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={handleChange}
             />
 
             {/* Checkbox  */}

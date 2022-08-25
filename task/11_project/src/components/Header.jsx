@@ -13,7 +13,7 @@ function Header() {
   const navigation = useNavigate();
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             size="large"
@@ -24,14 +24,13 @@ function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-            onClick={() => navigation(ROUTE_PATH.Home)}
-            style={{ cursor: "pointer" }}
-          >
-            Home
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <span
+              onClick={() => navigation(ROUTE_PATH.Home)}
+              style={{ cursor: "pointer" }}
+            >
+              Home
+            </span>
           </Typography>
           <Button color="inherit" onClick={() => navigation(ROUTE_PATH.Login)}>
             Login
