@@ -37,7 +37,7 @@ const Login = () => {
           localStorage.setItem("_token", result.data.token);
           isLoggedIn();
           isAdmin();
-          navigate(ROUTE_PATH.Products);
+          navigate(ROUTE_PATH.Home);
         }
 
         if (result.data.err) {

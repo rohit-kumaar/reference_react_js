@@ -11,7 +11,7 @@ import { ROUTE_PATH } from "routes/publicRoutes";
 import { doLogout, isAdmin, isLoggedIn } from "services/service";
 
 function Header() {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -33,13 +33,13 @@ function Header() {
             <>
               <Button
                 color="inherit"
-                onClick={() => navigation(ROUTE_PATH.Login)}
+                onClick={() => navigate(ROUTE_PATH.Login)}
               >
                 Login
               </Button>
               <Button
                 color="inherit"
-                onClick={() => navigation(ROUTE_PATH.SignUp)}
+                onClick={() => navigate(ROUTE_PATH.SignUp)}
               >
                 Sign Up
               </Button>
@@ -48,10 +48,7 @@ function Header() {
 
           {isLoggedIn() && (
             <>
-              <Button
-                color="inherit"
-                onClick={() => navigation(ROUTE_PATH.Home)}
-              >
+              <Button color="inherit" onClick={() => navigate(ROUTE_PATH.Home)}>
                 Home
               </Button>
             </>
@@ -61,7 +58,7 @@ function Header() {
             <>
               <Button
                 color="inherit"
-                onClick={() => navigation(ROUTE_PATH.AddProducts)}
+                onClick={() => navigate(ROUTE_PATH.AddProducts)}
               >
                 Add Product
               </Button>
@@ -70,10 +67,7 @@ function Header() {
 
           {isLoggedIn() && (
             <>
-              <Button
-                color="inherit"
-                onClick={() => navigation(ROUTE_PATH.Cart)}
-              >
+              <Button color="inherit" onClick={() => navigate(ROUTE_PATH.Cart)}>
                 Cart
               </Button>
               <Button color="inherit" onClick={() => doLogout()}>

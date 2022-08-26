@@ -4,7 +4,7 @@ import React from "react";
 const Home = () => {
   return (
     <>
-      <Container style={{ marginTop: "100px" }}>Home</Container>
+      <Container>Home</Container>
     </>
   );
 };

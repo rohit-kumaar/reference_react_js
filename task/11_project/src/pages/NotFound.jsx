@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <>
       <h1>404 NotFound</h1>
-      <Link to={ROUTE_PATH.Home}>Go to home page</Link>
+      <Link to={ROUTE_PATH.SignUp}>Go to home page</Link>
     </>
   );
 };

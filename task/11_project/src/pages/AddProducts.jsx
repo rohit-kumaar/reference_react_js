@@ -4,7 +4,7 @@ import React from "react";
 const AddProducts = () => {
   return (
     <>
-      <Container style={{ marginTop: "100px" }}>Add Products</Container>
+      <Container>Add Products</Container>
     </>
   );
 };

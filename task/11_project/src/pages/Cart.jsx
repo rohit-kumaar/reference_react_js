@@ -4,7 +4,7 @@ import React from "react";
 const Cart = () => {
   return (
     <>
-      <Container style={{ marginTop: "100px" }}>Cart</Container>
+      <Container>Cart</Container>
     </>
   );
 };
