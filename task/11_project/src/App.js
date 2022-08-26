@@ -8,6 +8,8 @@ import { ROUTE_PATH } from "routes/publicRoutes";
 import NotFound from "pages/NotFound";
 import Products from "pages/Products";
 import { Container } from "@mui/system";
+import AddProducts from "pages/AddProducts";
+import Cart from "pages/Cart";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path={ROUTE_PATH.Login} element={<Login />} />
           <Route path={ROUTE_PATH.NotFound} element={<NotFound />} />
           <Route path={ROUTE_PATH.Products} element={<Products />} />
+          <Route path={ROUTE_PATH.AddProducts} element={<AddProducts />} />
+          <Route path={ROUTE_PATH.Cart} element={<Cart />} />
         </Routes>
       </Container>
     </Router>

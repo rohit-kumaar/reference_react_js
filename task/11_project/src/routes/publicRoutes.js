@@ -1,7 +1,9 @@
 export const ROUTE_PATH = {
-  Home: "/",
-  SignUp: "/sign-up",
+  Home: "/home",
+  SignUp: "/",
   Login: "/login",
   Products: "/products",
+  AddProducts: "/add-products",
+  Cart: "/cart",
   NotFound: "*",
 };

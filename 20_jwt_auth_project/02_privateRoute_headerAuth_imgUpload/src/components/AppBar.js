@@ -55,7 +55,7 @@ export default function MyAppBar() {
               </Button>
             </>
           )}
-          
+
           {isLoggedIn() && (
             <>
               <Button color="inherit" onClick={() => navigate("/cart")}>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { API_URL } from "config";
+import { ROUTE_PATH } from "routes/publicRoutes";
 
 export const registerUser = (data) => axios.post(`${API_URL}users`, data);
 
@@ -29,5 +30,5 @@ export const isAdmin = () => (!getUser() ? false : getUser().isAdmin);
 
 export const doLogout = () => {
   localStorage.removeItem("_token");
-  window.location = "/";
+  window.location = ROUTE_PATH.SignUp;
 };
