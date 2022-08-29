@@ -26,7 +26,7 @@ function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Apna Business
+            Business
           </Typography>
 
           {!isLoggedIn() && (

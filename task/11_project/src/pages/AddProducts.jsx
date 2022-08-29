@@ -16,7 +16,7 @@ import { postAddProduct } from "services/service";
 const theme = createTheme();
 
 const AddProducts = () => {
-  const [product, setProduct] = useState({
+  const [state, setState] = useState({
     name: "",
     category: "",
     price: "",
@@ -28,31 +28,31 @@ const AddProducts = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setProduct({ ...product, [name]: value });
+    setState({ ...state, [name]: value });
   };
 
   const handleImage = (event) => {
     if (event.target.files.length > 0) {
-      setProduct({ ...product, imageURL: event.target.files[0] });
+      setState({ ...state, imageURL: event.target.files[0] });
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
-      product.imageURL.type == "image/jpeg" ||
-      product.imageURL.type == "image/jpg" ||
-      product.imageURL.type == "image/png"
+      state.imageURL.type == "image/jpeg" ||
+      state.imageURL.type == "image/jpg" ||
+      state.imageURL.type == "image/png"
     ) {
       //if we send data to server with attachment we use FormData property
       let formData = new FormData();
-      formData.append("name", product.name);
-      formData.append("category", product.category);
-      formData.append("price", product.price);
-      formData.append("description", product.description);
-      formData.append("manufacturer", product.manufacturer);
-      formData.append("availableItems", product.availableItems);
-      formData.append("attach", product.imageURL);
+      formData.append("name", state.name);
+      formData.append("category", state.category);
+      formData.append("price", state.price);
+      formData.append("description", state.description);
+      formData.append("manufacturer", state.manufacturer);
+      formData.append("availableItems", state.availableItems);
+      formData.append("attach", state.imageURL);
       postAddProduct(formData).then((res) => {
         console.log(res.data);
       });
@@ -74,7 +74,7 @@ const AddProducts = () => {
               alignItems: "center",
             }}
           >
-            {/* It's a component that renders a logo. */}
+            {/* A component that is used to display the logo of the website. */}
             <RegistrationPageLogo name="Add Product" />
             <Box
               component="form"
@@ -98,7 +98,7 @@ const AddProducts = () => {
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  value={product.category}
+                  value={state.category}
                   label="Age"
                   name="category"
                   onChange={handleChange}
@@ -154,7 +154,7 @@ const AddProducts = () => {
                 margin="normal"
                 required
                 fullWidth
-                id="uimage"
+                id="image"
                 name="file"
                 autoComplete="Upload Image"
                 onChange={handleImage}
@@ -170,7 +170,7 @@ const AddProducts = () => {
             </Box>
           </Box>
 
-          {/* It's a component that renders a copyright notice. */}
+          {/* A component that is used to display the copyright information of the website. */}
           <Copyright />
         </Container>
       </ThemeProvider>
