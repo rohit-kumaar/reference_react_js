@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ProtectAdminRoute, ProtectRoute } from "routes/privateRoutes";
-import { ROUTE_PATH } from "routes/publicRoutes";
-import React, { Suspense } from "react";
 import { Container } from "@mui/system";
+import "App.css";
 import Header from "components/Header";
 import SignUp from "pages/SignUp";
-import "App.css";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ProtectAdminRoute, ProtectRoute } from "routes/privateRoutes";
+import { ROUTE_PATH } from "routes/publicRoutes";
 const Home = React.lazy(() => import("pages/Home"));
 const Login = React.lazy(() => import("pages/Login"));
 const NotFound = React.lazy(() => import("pages/NotFound"));

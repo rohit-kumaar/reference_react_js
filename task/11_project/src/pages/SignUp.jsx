@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useNavigate } from "react-router-dom";
-import { registerUser } from "services/service";
-import Copyright from "components/Copyright";
-import { ROUTE_PATH } from "routes/publicRoutes";
-import RegistrationPageLogo from "components/RegistrationPageLogo";
+import TextField from "@mui/material/TextField";
 import Button from "components/Button";
+import Copyright from "components/Copyright";
+import RegistrationPageLogo from "components/RegistrationPageLogo";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATH } from "routes/publicRoutes";
+import { registerUser } from "services/service";
 
 const theme = createTheme();
 

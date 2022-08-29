@@ -32,3 +32,5 @@ export const doLogout = () => {
   localStorage.removeItem("_token");
   window.location = ROUTE_PATH.SignUp;
 };
+
+export const postAddProduct = (data) => axios.post(`${API_URL}products`, data);
