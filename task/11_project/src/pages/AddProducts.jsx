@@ -123,7 +123,7 @@ const AddProducts = () => {
                 required
                 fullWidth
                 name="description"
-                label="description"
+                label="Description"
                 type="description"
                 id="description"
                 autoComplete="description"
@@ -134,7 +134,7 @@ const AddProducts = () => {
                 required
                 fullWidth
                 id="manufacturer"
-                label="manufacturer"
+                label="Manufacturer"
                 name="manufacturer"
                 autoComplete="manufacturer"
                 onChange={handleChange}
@@ -144,7 +144,7 @@ const AddProducts = () => {
                 required
                 fullWidth
                 id="availableItems"
-                label="availableItems"
+                label="AvailableItems"
                 name="availableItems"
                 autoComplete="availableItems"
                 onChange={handleChange}
