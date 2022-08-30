@@ -1,51 +1,61 @@
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
+import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
-import Button from "components/Button";
-import Copyright from "components/Copyright";
-import RegistrationPageLogo from "components/RegistrationPageLogo";
-import { useState } from "react";
+import Typography from "@mui/material/Typography";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ROUTE_PATH } from "routes/publicRoutes";
-import { registerUser } from "services/service";
+import { registerUser } from "../config/Myservice";
+
+function Copyright(props) {
+  return (
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
 const theme = createTheme();
 
-const SignUp = () => {
-  const navigate = useNavigate();
-
-
-  const [user, setUser] = useState({
+export default function Signup() {
+  const [state, setState] = useState({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
     contactNumber: "",
   });
-
-  const handleChange = (event) => {
+  const navigate = useNavigate();
+  const handler = (event) => {
     const { name, value } = event.target;
-    setUser({ ...user, [name]: value });
+    setState({ ...state, [name]: value });
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    registerUser(user)
-      .then((result) => {
-        if (!result.data.err) {
-          alert(result.data.msg);
-          navigate(ROUTE_PATH.Login);
-        }
-
-        if (result.data.err) {
-          alert(result.data.msg);
-        }
-      })
-      .catch((err) => {
-        console.log(`Sign Up ${err}`);
-      });
+    registerUser(state).then((res) => {
+      if (res.data.err == 0) {
+        alert(res.data.msg);
+        navigate("/");
+      }
+      if (res.data.err == 1) {
+        alert(res.data.msg);
+      }
+    });
   };
 
   return (
@@ -60,9 +70,12 @@ const SignUp = () => {
             alignItems: "center",
           }}
         >
-          {/* A component that is used to display the logo of the application. */}
-          <RegistrationPageLogo name="Sign up" />
-
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign up
+          </Typography>
           <Box
             component="form"
             onSubmit={handleSubmit}
@@ -73,22 +86,23 @@ const SignUp = () => {
               margin="normal"
               required
               fullWidth
-              id="firstName"
+              id="firtname"
               label="First Name"
               name="firstName"
-              autoComplete="firstName"
+              autoComplete="firstname"
               autoFocus
-              onChange={handleChange}
+              onChange={handler}
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              id="lastName"
+              id="lastname"
               label="Last Name"
               name="lastName"
-              autoComplete="lastName"
-              onChange={handleChange}
+              autoComplete="lastname"
+              autoFocus
+              onChange={handler}
             />
             <TextField
               margin="normal"
@@ -98,7 +112,8 @@ const SignUp = () => {
               label="Email Address"
               name="email"
               autoComplete="email"
-              onChange={handleChange}
+              autoFocus
+              onChange={handler}
             />
             <TextField
               margin="normal"
@@ -109,7 +124,7 @@ const SignUp = () => {
               type="password"
               id="password"
               autoComplete="current-password"
-              onChange={handleChange}
+              onChange={handler}
             />
             <TextField
               margin="normal"
@@ -119,19 +134,21 @@ const SignUp = () => {
               label="Contact Number"
               name="contactNumber"
               autoComplete="contact number"
-              onChange={handleChange}
+              autoFocus
+              onChange={handler}
             />
-
-            {/* A component that is used to display the button. */}
-            <Button name="Sign Up" />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign Up
+            </Button>
           </Box>
         </Box>
-
-        {/* A component that is used to display the copyright information.  */}
-        <Copyright />
+        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
-};
-
-export default SignUp;
+}

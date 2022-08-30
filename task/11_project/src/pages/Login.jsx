@@ -1,22 +1,35 @@
-import React, { useState } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Copyright from "components/Copyright";
-import RegistrationPageLogo from "components/RegistrationPageLogo";
+import TextField from "@mui/material/TextField";
 import Button from "components/Button";
-import ForgotPassword from "components/ForgotPassword";
 import CheckBox from "components/CheckBox";
-import { useNavigate } from "react-router-dom";
-import { isAdmin, isLoggedIn, loginUser } from "services/service";
+import Copyright from "components/Copyright";
+import ForgotPassword from "components/ForgotPassword";
+import RegistrationPageLogo from "components/RegistrationPageLogo";
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTE_PATH } from "routes/publicRoutes";
+import { getToken, isAdmin, isLoggedIn, loginUser } from "services/service";
 
 const theme = createTheme();
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // if (location.pathname == ROUTE_PATH.Login && getToken()) {
+    // if (window.confirm("Do you want to logout ?")) {
+    //   localStorage.removeItem("_token");
+    //   navigate(ROUTE_PATH.Login);
+    //   window.location.reload();
+    // }
+
+    // if (!window.confirm("Do you want to logout ?")) {
+    //   navigate(location.pathname);
+    // }
+  // }
 
   const [user, setUser] = useState({
     email: "",

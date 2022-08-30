@@ -11,7 +11,7 @@ import TextField from "@mui/material/TextField";
 import Copyright from "components/Copyright";
 import RegistrationPageLogo from "components/RegistrationPageLogo";
 import { useState } from "react";
-import { postAddProduct } from "services/service";
+import { getToken, postAddProduct } from "services/service";
 
 const theme = createTheme();
 
@@ -60,6 +60,8 @@ const AddProducts = () => {
       alert("Only Jpg and Png Supported");
     }
   };
+
+
 
   return (
     <>
