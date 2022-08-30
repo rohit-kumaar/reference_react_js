@@ -12,10 +12,8 @@ import { ROUTE_PATH } from "routes/publicRoutes";
 import { registerUser } from "services/service";
 
 const theme = createTheme();
-
 const SignUp = () => {
   const navigate = useNavigate();
-
 
   const [user, setUser] = useState({
     firstName: "",

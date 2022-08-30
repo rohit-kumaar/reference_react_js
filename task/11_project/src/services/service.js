@@ -34,3 +34,7 @@ export const doLogout = () => {
 };
 
 export const postAddProduct = (data) => axios.post(`${API_URL}products`, data);
+
+export const getAllProducts = () => axios.get(`${API_URL}products`);
+
+export const deleteProduct = (id) => axios.delete(`${API_URL}products/${id}`);

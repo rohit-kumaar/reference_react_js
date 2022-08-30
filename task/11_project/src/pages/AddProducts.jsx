@@ -11,11 +11,14 @@ import TextField from "@mui/material/TextField";
 import Copyright from "components/Copyright";
 import RegistrationPageLogo from "components/RegistrationPageLogo";
 import { useState } from "react";
-import { getToken, postAddProduct } from "services/service";
+import { useNavigate } from "react-router-dom";
+import { postAddProduct } from "services/service";
 
 const theme = createTheme();
 
 const AddProducts = () => {
+  const navigate = useNavigate();
+
   const [state, setState] = useState({
     name: "",
     category: "",
@@ -53,15 +56,17 @@ const AddProducts = () => {
       formData.append("manufacturer", state.manufacturer);
       formData.append("availableItems", state.availableItems);
       formData.append("attach", state.imageURL);
+
       postAddProduct(formData).then((res) => {
-        console.log(res.data);
+        if (res.data.err == 0) {
+          alert(res.data.msg);
+          navigate("/products");
+        }
       });
     } else {
       alert("Only Jpg and Png Supported");
     }
   };
-
-
 
   return (
     <>

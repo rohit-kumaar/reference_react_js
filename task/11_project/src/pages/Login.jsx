@@ -11,7 +11,7 @@ import RegistrationPageLogo from "components/RegistrationPageLogo";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTE_PATH } from "routes/publicRoutes";
-import { getToken, isAdmin, isLoggedIn, loginUser } from "services/service";
+import { doLogout, isAdmin, isLoggedIn, loginUser } from "services/service";
 
 const theme = createTheme();
 
@@ -19,16 +19,25 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // if (location.pathname == ROUTE_PATH.Login && getToken()) {
-    // if (window.confirm("Do you want to logout ?")) {
-    //   localStorage.removeItem("_token");
-    //   navigate(ROUTE_PATH.Login);
-    //   window.location.reload();
-    // }
+  // if (isLoggedIn()) {
+  //   if (location.pathname === ROUTE_PATH.Login) {
+  //     if (window.confirm("Do you want to logout ?")) {
+  //       doLogout();
+  //     }
+  //   }
+  // }
 
-    // if (!window.confirm("Do you want to logout ?")) {
-    //   navigate(location.pathname);
-    // }
+  // if (getToken()) {
+  //   if (location.pathname == ROUTE_PATH.Login) {
+  //     window.confirm("Do you want to logout ?");
+  //     localStorage.removeItem("_token");
+  //     navigate(ROUTE_PATH.Login);
+  //     window.location.reload();
+  //   }
+
+  //   if (window.confirm("Do you want to logout ?") === false) {
+  //     navigate(ROUTE_PATH.Home);
+  //   }
   // }
 
   const [user, setUser] = useState({

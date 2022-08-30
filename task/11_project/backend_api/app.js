@@ -13,6 +13,8 @@ mongoose
 
 const app = express();
 
+app.use("/Images",express.static('uploads'));
+
 const corsOptions = {
   exposedHeaders: ["x-auth-token", "Authorization"],
 };
