@@ -8,16 +8,13 @@ function AllStates(props) {
     if (localStorage.getItem("addtocart")) {
       const cart = JSON.parse(localStorage.getItem("addtocart"));
       return cart.length;
-    } else {
-      return 0;
-    }
+    } else return 0;
   }
 
   // Add to cart
   const addToCart = (product) => {
     if (localStorage.getItem("addtocart")) {
       const cart = JSON.parse(localStorage.getItem("addtocart"));
-
       setCount(cart.length);
 
       let isProduct = false;
@@ -34,23 +31,13 @@ function AllStates(props) {
         cart[currentProductId].quantity += 1;
         localStorage.setItem("addtocart", JSON.stringify(cart));
       } else {
-        cart.push({
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          quantity: product.quantity,
-        });
+        cart.push({ ...product });
         localStorage.setItem("addtocart", JSON.stringify(cart));
         setCount(cart.length);
       }
     } else {
       const cart = [];
-      cart.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        quantity: product.quantity,
-      });
+      cart.push({ ...product });
       localStorage.setItem("addtocart", JSON.stringify(cart));
       setCount(cart.length);
     }
