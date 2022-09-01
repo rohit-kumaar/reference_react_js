@@ -6,7 +6,8 @@ import TextField from "@mui/material/TextField";
 import Button from "components/Button";
 import Copyright from "components/Copyright";
 import RegistrationPageLogo from "components/RegistrationPageLogo";
-import { useState } from "react";
+import { useTitle } from "hooks/useTitle";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATH } from "routes/publicRoutes";
 import { registerUser } from "services/service";
@@ -22,6 +23,8 @@ const SignUp = () => {
     password: "",
     contactNumber: "",
   });
+
+  useTitle("Sign Up");
 
   const handleChange = (event) => {
     const { name, value } = event.target;

@@ -8,7 +8,8 @@ import CheckBox from "components/CheckBox";
 import Copyright from "components/Copyright";
 import ForgotPassword from "components/ForgotPassword";
 import RegistrationPageLogo from "components/RegistrationPageLogo";
-import { useState } from "react";
+import { useTitle } from "hooks/useTitle";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTE_PATH } from "routes/publicRoutes";
 import { doLogout, isAdmin, isLoggedIn, loginUser } from "services/service";
@@ -18,6 +19,8 @@ const theme = createTheme();
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  useTitle("Login");
 
   // if (isLoggedIn()) {
   //   if (location.pathname === ROUTE_PATH.Login) {
