@@ -1,55 +1,58 @@
 --> Life cycle methods :- every component have their own lifecycle
-    -> Its have 3 phases 
-        1. Mounting   :- when our component is load 
-        2. Unmounting :- when we leave the component
-        3. Updating   :- when their is any update in state|pro 
+    -> Its have 3 phases
+    1. Mounting :- when our component is load
+    2. Unmounting :- when we leave the component
+    3. Updating :- when their is any update in state|pro
 
---> Initialization :- constructor 
-    -> Mounting :- 
-       It is the stage of rendering the JSX returned by the render method itself.
+--> Initialization :- constructor
+    -> Mounting :-
+    It is the stage of rendering the JSX returned by the render method itself.
+
     -> componentDidMount() :-
-       It invoked right after the component is mounted on the DOM. 
-       It invoke only once. In this we call some APIs which we need to load when my component is render.
-    -> Updating :- 
-       when there is any changes in props and state then a function is call.
-       componentDidUpdate(prevState,prevProps):- 
+    It invoked right after the component is mounted on the DOM.
+    It invoke only once. In this we call some APIs which we need to load when my component is render.
+
+    -> Updating :-
+    when there is any changes in props and state then a function is call.
+    componentDidUpdate(prevState,prevProps):-
     -> Unmounting:- when we leave from the component .
-       componentWillUnmount() :- used to flush up unwanted data 
-       componentWillUnmount(){
-          //flush data 
-       }
+    componentWillUnmount() :- used to flush up unwanted data
+    componentWillUnmount(){
+    //flush data
+    }
 
     -> Http Call | Network Call (How we consume the API )
-        -> fetch() :- return an promise 
-           const API="https://jsonplaceholder.typicode.com/posts";
-                 fetch(API)
-                 .then(res=> res.json())
-                 .then(data=>{
-                     console.log(data)
-                     this.setState({post:data})
-                 })
-                 .catch(err=> console.log(err))
+    -> fetch() :- return an promise
+    const API="https://jsonplaceholder.typicode.com/posts";
+    fetch(API)
+    .then(res=> res.json())
+    .then(data=>{
+    console.log(data)
+    this.setState({post:data})
+    })
+    .catch(err=> console.log(err))
 
-        -> axios :- 3rd party module 
-           npm install axios --save 
+    -> axios :- 3rd party module
+    npm install axios --save
 
-          import axios from 'axios';
-                 const API="https://jsonplaceholder.typicode.com/posts";
-                 axios.get(API)
-                 .then(res=>{
-                   console.log(res.data)
-                 })
-                 .catch(err=> console.log(err))
-                 
-        -> async/await 
-                 async componentDidMount(){
-                    try{
-                         const API="https://jsonplaceholder.typicode.com/posts";
-                         const res=await fetch(API);
-                         const json=await res.json();
-                         this.setState({post:json})
-                       }
-                    catch(err){
-                         console.log(err)
-                       }
-                 }
+    import axios from 'axios';
+    const API="https://jsonplaceholder.typicode.com/posts";
+    axios.get(API)
+    .then(res=>{
+    console.log(res.data)
+    })
+    .catch(err=> console.log(err))
+
+    -> async/await
+    async componentDidMount(){
+    try{
+    const API="https://jsonplaceholder.typicode.com/posts";
+    const res=await fetch(API);
+    const json=await res.json();
+    this.setState({post:json})
+    }
+    catch(err){
+    console.log(err)
+    }
+    }
+

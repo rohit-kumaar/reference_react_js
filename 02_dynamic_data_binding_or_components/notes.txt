@@ -1,56 +1,56 @@
+  --> Dynamic data rendering
+    {} :- expressions
+    App.js
+    const title="Sumit";
 
-     -> Dynamic data rendering 
-        {} :- expressions 
-        App.js 
-        const title="Sumit";
-
-        <p> {title} </p>
-      -> render array and object 
-        map() 
+    <p> {title} </p>
+    -> render array and object
+    map()
 
 
-      -> components :-
-          Are the core building block of the react app. 
-          They are used for reusability.
-          Every component have their own design and logics.
+  --> components :-
+    Are the core building block of the react app.
+    They are used for reusability.
+    Every component have their own design and logics.
 
-         -> Types of components 
-            -> class components 
-            -> function components 
-            
-            -> class components :-
-              Myclass.js 
-              import React,{Component} from 'react';
-              class Myclass extends Component 
-              {
-                render(){
-                  return(
-                    <>
-                        <h2> My Class Component </h2>
-                    </>
-                  )
-                }
-              }
-              export default Myclass;
-              -> How we use a component in another component 
-              import Myclass from './Myclass';
+    -> Types of components
+    -> class components
+    -> function components
 
-              <Myclass />
-            -> props (properties):- are used to pass data from parent component to child component.(read only) (immutable)
-            App.js 
-            const title="xyz";
-            <Myclass mytitle={title}/>
-            -> read 
-             this.props.propsname
-            -> states :- are used to manage information within a component.they are mutable it means we can change the state value.
-               -> How we set state 
-                  constructor(props){
-                    super(props);
-                    this.state={count:0}
-                  }
-               -> How we react state 
-                 this.state.count 
-               -> How we update the state 
-                 this.setState({count:this.state.count+1})
-                -> Life cycle methods 
-                -> API Call 
+  --> class components :-
+    Myclass.js
+    import React,{Component} from 'react';
+    class Myclass extends Component
+    {
+    render(){
+    return(
+    <>
+        <h2> My Class Component </h2>
+    </>
+    )
+    }
+    }
+    export default Myclass;
+    -> How we use a component in another component
+    import Myclass from './Myclass';
+
+    <Myclass />
+    -> props (properties):- are used to pass data from parent component to child component.(read only) (immutable)
+    App.js
+    const title="xyz";
+    <Myclass mytitle={title} />
+    -> read
+    this.props.propsname
+    -> states :- are used to manage information within a component.they are mutable it means we can change the state
+    value.
+    -> How we set state
+    constructor(props){
+    super(props);
+    this.state={count:0}
+    }
+    -> How we react state
+    this.state.count
+    -> How we update the state
+    this.setState({count:this.state.count+1})
+    -> Life cycle methods
+    -> API Call

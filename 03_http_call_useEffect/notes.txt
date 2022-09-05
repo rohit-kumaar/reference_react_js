@@ -1,48 +1,45 @@
--> Http(Hypertext transfer protocol) client programming in React JS, 
-   fetching json data (HTTP CALL)
-     (How we consume the API) ?
-  -> fetch :- Inbuilt method of javascript and it return promise 
-     eg:
-      const API="---";
-      fetch(API)
-      .then(res=> res.json())
-      .then(data=>{
-        //
-      })
-      .catch(err=> console.log(err))
+--> Http(Hypertext transfer protocol) client programming in React JS,
+    fetching json data (HTTP CALL)
+    (How we consume the API) ?
+    -> fetch :- Inbuilt method of javascript and it return promise
+    eg:
+    const API="---";
+    fetch(API)
+    .then(res=> res.json())
+    .then(data=>{
+    //
+    })
+    .catch(err=> console.log(err))
 
-  -> axios :- 3rd party package return a promise and give us get | post | put | delete method 
-    npm install axios --save 
+--> axios :- 3rd party package return a promise and give us get | post | put | delete method
+    npm install axios --save
     eg:
     import axios from "axios";
-      const API="--";
-      axios.get(API)
-      .then(res=>{
-        console.log(res.data)
-      })
-      .catch(err=> console.log(err))
+    const API="--";
+    axios.get(API)
+    .then(res=>{
+    console.log(res.data)
+    })
+    .catch(err=> console.log(err))
 
-  --> useEffect() :-
-      The useEffect Hook allows you to perform side effects in your components.
-      side effects means fetching data, directly updating the DOM, and timers.
+--> useEffect() :-
+    The useEffect Hook allows you to perform side effects in your components.
+    side effects means fetching data, directly updating the DOM, and timers.
 
-    -> useEffect() :- mounting , unmounting , updating 
-      -> mounting :- when component is loaded 
-         useEffect(()=>{
-            // code
-         },[])
+    -> useEffect() :- mounting , unmounting , updating
+    -> mounting :- when component is loaded
+    useEffect(()=>{
+    // code
+    },[])
 
-      -> unmounting :- when we leave from the component (cleanup data)
-         useEffect(()=>{
-          return (){
-            // code
-          }
-         },[])
+    -> unmounting :- when we leave from the component (cleanup data)
+    useEffect(()=>{
+    return (){
+    // code
+    }
+    },[])
 
-      -> updating :- when any update in state and props 
-         useEffect(()=>{
-            // code
-         },[state|props])
-
-     
-      
+    -> updating :- when any update in state and props
+    useEffect(()=>{
+    // code
+    },[state|props])
